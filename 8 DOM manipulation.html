@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            border: 2px solid red;
+            background-color: cyan;
+            margin: 3px 0px;
+            padding: 9px;
+        }
+
+        .bg-primary {
+            background-color: blueviolet;
+        }
+
+        .success {
+            color: rgb(201, 201, 6);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to DOM</h1>
+    <div id="firstcontainer" class="container">
+        <button id="click">CLICK ME</button>
+        <p>This is second paragraph</p>
+    </div>
+    <div class="container">
+        <p>This is Paragraph</p>
+    </div>
+    <script>
+
+        let elem = document.getElementById('click')
+        // console.log(elem);
+        // Use to print the collection of ID
+
+        let elemClass = document.getElementsByClassName('container')
+        // console.log(elemClass);
+        // Use to print the collection of Class
+
+        // elemClass[0].style.background = "yellow";
+        // Use to change the background of "elemClass"
+
+        elemClass[0].classList.add("bg-primary");
+        // Use to add "bg-primary class" in "elemClass"
+        elemClass[0].classList.add("success");
+
+        // elemClass[0].classList.remove("success");
+        // Use to remove "success class" from "elemClass"
+
+        // elemClass[0].innerHTML
+        // Use to access the HTML code of "elemClass"
+        // Work only in console not in VS editor
+        // console.log(elemClass[0].innerHTML);
+
+        // elemClass[0].innerText
+        // Use to access the written part of "elemClass"
+        // Work only in console not in VS editor
+        // console.log(elemClass[0].innerText);
+
+        tn = document.getElementsByTagName('div');
+        // console.log(tn);
+        // Use to print the "div" tag elements
+
+        createdElementByMe = document.createElement('p');
+        createdElementByMe.innerText = "This is a created paragraph";
+        tn[0].appendChild(createdElementByMe);
+        // Use to add tag in HTML
+        
+        createdElementByMe2 = document.createElement('b');
+        createdElementByMe2.innerText = "This is a bold paragraph";
+        tn[0].replaceChild(createdElementByMe2, createdElementByMe);
+        // Use to replace the tag
+        
+        // removeChild(element name);
+        // Use to remove the tag
+
+        // --------------------------------------------------------
+        // Selecting using Query -->
+
+        sel = document.querySelector('.container');
+        console.log(sel);
+        // Use to print first HTML code containing "container class"
+        
+        sel = document.querySelectorAll('.container');
+        console.log(sel);
+        // Use to print all HTML code containing "container class"
+
+    </script>
+</body>
+
+</html>

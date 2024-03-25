@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            border: 2px solid red;
+            background-color: cyan;
+            margin: 3px 0px;
+            padding: 9px;
+        }
+
+        .bg-primary {
+            background-color: blueviolet;
+        }
+
+        .success {
+            color: rgb(201, 201, 6);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to Events</h1>
+    <div id="firstcontainer" class="container">
+        <button id="click" onclick="clicked()">CLICK ME</button>
+        <!-- "clicked function" will execute when button is clicked -->
+        <p>This is second paragraph</p>
+    </div>
+    <div class="container">
+        <p>This is Paragraph</p>
+    </div>
+    <script>
+
+        function clicked() {
+            console.log("The button was clicked.");
+        }
+
+        window.onload = function () {
+            console.log("The page was loaded.");
+        }
+        //  Function will execute when the page is loaded
+        
+        // firstcontainer.addEventListener('click', function(){
+        //     console.log("Clicked on container");
+        // })
+        //  Function will execute when clicked on "firstcontainer"
+        
+        // firstcontainer.addEventListener('mouseover', function(){
+            // console.log("Mouse on container");
+        // })
+        //  Function will execute when mouse over "firstcontainer"
+        
+        // firstcontainer.addEventListener('mouseout', function(){
+        //     console.log("Mouse out of container");
+        // })
+        //  Function will execute when mouse is out of "firstcontainer"
+
+        firstcontainer.addEventListener('mouseup', function(){
+            console.log("Mouse up when clicked on container");
+        })
+        //  Function will execute when mouse was release from "firstcontainer"
+        
+        firstcontainer.addEventListener('mousedown', function(){
+            console.log("Mouse down when clicked on container");
+        })
+        //  Function will execute when mouse was click on "firstcontainer"
+
+    </script>
+</body>
+
+</html>
